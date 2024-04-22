@@ -13,6 +13,7 @@ import {
 import { makeStyles } from "@mui/styles";
 import BasicTable from "./Table";
 import Products from "./components/products/Products";
+import { Link, Outlet } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -57,17 +58,37 @@ const Sidebar = () => {
         anchor="left"
       >
         <List>
-          {["Dashboard", "Product", "Brand", "Unit", "Category"].map((text) => (
-            <ListItem button key={text}>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          {/* {["Dashboard", "Product", "Brand", "Unit", "Category"].map((text) => ( */}
+          <ListItem button>
+            <ListItemText primary="Dashboard" />
+          </ListItem>
+          <ListItem button>
+            <Link to="/products">
+              <ListItemText primary="Product" />
+            </Link>
+          </ListItem>
+          <ListItem button>
+            <Link to="/brand">
+              {" "}
+              <ListItemText primary="Brand" />
+            </Link>
+          </ListItem>
+          <ListItem button>
+            <Link to="/unit">
+              <ListItemText primary="Unit" />
+            </Link>
+          </ListItem>
+          <ListItem button>
+            <Link to="/category">
+              <ListItemText primary="Category" />
+            </Link>
+          </ListItem>
+          {/* ))} */}
         </List>
       </Drawer>
       <main className={classes.content}>
         <Toolbar />
-        <BasicTable />
-        <Products />
+        <Outlet />
       </main>
     </div>
   );
