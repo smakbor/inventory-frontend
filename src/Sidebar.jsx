@@ -14,6 +14,7 @@ import { makeStyles } from "@mui/styles";
 import BasicTable from "./Table";
 import Products from "./components/products/Products";
 import { Link, Outlet } from "react-router-dom";
+import Brand from "./components/brand/Brand";
 
 const drawerWidth = 240;
 
