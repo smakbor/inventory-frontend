@@ -11,10 +11,9 @@ import {
   Typography,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import BasicTable from "./Table";
-import Products from "./components/products/Products";
+
 import { Link, Outlet } from "react-router-dom";
-import Brand from "./components/brand/Brand";
+import Footer from "./components/Footer";
 
 const drawerWidth = 240;
 
@@ -90,6 +89,7 @@ const Sidebar = () => {
       <main className={classes.content}>
         <Toolbar />
         <Outlet />
+        <Footer />
       </main>
     </div>
   );
